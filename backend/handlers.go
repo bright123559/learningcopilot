@@ -26,16 +26,7 @@ func SetupRoutes(app *fiber.App) {
 
 // WelcomeHandler handles the root endpoint
 func WelcomeHandler(c *fiber.Ctx) error {
-	return c.JSON(fiber.Map{
-		"message": "Welcome to PayFlow Backend API",
-		"version": "1.0.0",
-		"endpoints": fiber.Map{
-			"health":         "/api/v1/health",
-			"processPayment": "/api/v1/payment/process",
-			"paymentStatus":  "/api/v1/payment/status/:id",
-			"paymentHistory": "/api/v1/payment/history",
-		},
-	})
+	return c.SendString("Hello World")
 }
 
 // HealthCheck returns the server health status
